@@ -116,6 +116,7 @@ bool GameScene::onTouchBegan(Touch *touch, Event *unused_event){
     if(Config::statusFlag == STATUSFLAG::PREPARATION){
         
         Config::statusFlag = STATUSFLAG::PRESTART;
+        return true;
     
     }
     
@@ -125,7 +126,7 @@ bool GameScene::onTouchBegan(Touch *touch, Event *unused_event){
     if(Config::statusFlag == STATUSFLAG::START){
         
         Config::statusFlag = STATUSFLAG::PLAY;
-        
+        return true;
     }
 
     
@@ -182,25 +183,9 @@ void GameScene::update(float delta){
     
     if(Config::statusFlag != STATUSFLAG::PREPARATION){
         
-        switch (Config::statusFlag) {
-            case STATUSFLAG::PREPARATION: log("preparation");break;
-            case STATUSFLAG::PRESTART: log("prestart"); log("statusFlagは%d",Config::statusFlag);break;
-            case STATUSFLAG::START: log("start");break;
-            case STATUSFLAG::PREEND: log("preend");break;
-            case STATUSFLAG::END: log("end");break;
-                
-            default: log("それ以外");break;
-        }
-        log("preparationは%d",STATUSFLAG::PREPARATION);
-        log("prestartは%d",STATUSFLAG::PRESTART);
-        log("startは%d",STATUSFLAG::START);
     
         BackGround::getInstance()->update();
-        //  Hanakuso::getInstance()->update();
-
-        
-        
-        
+        Hanakuso::getInstance()->update();
         
     }
   

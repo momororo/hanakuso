@@ -103,45 +103,48 @@ void BackGround::makeStage1(){
 void BackGround::update(){
 
     
-    log("BackGroundのstatusFlagは%d",Config::statusFlag);
     
 //スタート前に視点を奥から手前へバン
     if (Config::statusFlag == STATUSFLAG::PRESTART) {
 
         //バン速度
-        int speed = 200;
+        int speed = 50;
+     
         
         //手前から奥へバン
         if(backGround -> getPositionY() - backGround -> getContentSize().height + speed <= 0  )
             backGround -> setPosition(Vec2(backGround->getPositionX(),backGround->getPositionY() + speed));
         else{
+            
+            
+            //最後の調整
             backGround -> setPosition(Vec2(backGround->getPositionX(),backGround->getContentSize().height));
+            
+            //スタート状態に遷移
+            Config::statusFlag = STATUSFLAG::START;
+
         }
         
-        //スタート状態に遷移
-        Config::statusFlag = STATUSFLAG::START;
-    }else{
-        log("はいりませんでした・・・・");
-        log("%d=%d",Config::statusFlag,STATUSFLAG::PRESTART);
+        
     }
-
+    
 //プレイ中は視点を手前から奥にバン
     if(Config::statusFlag == STATUSFLAG::PLAY){
         
         //バン速度
-        int speed = 100;
+        int speed = 25;
         
         //手前から奥へバン
-        if(backGround -> getPositionY() - backGround -> getContentSize().height + speed <= 0  )
-            backGround -> setPosition(Vec2(backGround->getPositionX(),backGround->getPositionY() + speed));
-        else{
-            backGround -> setPosition(Vec2(backGround->getPositionX(),backGround->getContentSize().height));
+        if(backGround -> getPositionY() - speed >= 0  ){
+            backGround -> setPosition(Vec2(backGround->getPositionX(),backGround->getPositionY() - speed));
+        }else{
+            backGround -> setPosition(Vec2(backGround->getPositionX(),0));
+            
+            //end状態に遷移
+            Config::statusFlag = STATUSFLAG::START;
         }
 
         
     }
-  
- 
-    
-    
+        
 }

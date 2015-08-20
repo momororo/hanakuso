@@ -49,9 +49,9 @@ enum class TAPPOINT {
 class Config {
 
 public:
-        
-    static STATUSFLAG statusFlag;
     
+    //staticにしたとしても別途cppに記述しないとリンクエラー。。。。
+    static STATUSFLAG statusFlag;
     static TAPPOINT tapPoint;
 
 
