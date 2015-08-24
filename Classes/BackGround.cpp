@@ -112,7 +112,7 @@ void BackGround::update(){
      
         
         //手前から奥へバン
-        if(backGround -> getPositionY() - backGround -> getContentSize().height + speed <= 0  )
+        if(backGround -> getPositionY() - backGround -> getContentSize().height + speed < 0  )
             backGround -> setPosition(Vec2(backGround->getPositionX(),backGround->getPositionY() + speed));
         else{
             
@@ -135,16 +135,16 @@ void BackGround::update(){
         int speed = 25;
         
         //手前から奥へバン
-        if(backGround -> getPositionY() - speed >= 0  ){
+        if(backGround -> getPositionY() - selfFrame.height - speed > 0  ){
             backGround -> setPosition(Vec2(backGround->getPositionX(),backGround->getPositionY() - speed));
         }else{
-            backGround -> setPosition(Vec2(backGround->getPositionX(),0));
+            backGround -> setPosition(Vec2(backGround->getPositionX(),selfFrame.height));
             
             //end状態に遷移
-            Config::statusFlag = STATUSFLAG::START;
+            Config::statusFlag = STATUSFLAG::GOAL;
         }
 
         
     }
-        
+    
 }

@@ -23,10 +23,20 @@ enum class  STATUSFLAG {
     PLAY,
     //ポーズ
     PAUSE,
+    //ゴール(backGroundが最終地点に到達)
+    GOAL,
+    //成功
+    SUCCESS,
+    //失敗
+    FAILURE,
     //終了前準備
-    PREEND,
+    PRGOODEND,
+    PREBADEND,
     //終了
-    END
+    GOODEND,
+    BADEND,
+    
+    
 };
 
 
@@ -55,13 +65,7 @@ public:
     static TAPPOINT tapPoint;
 
 
-
-    
-};
-
-
-
 #endif/* defined(__hanakuso__config__) */
 
 
-
+};

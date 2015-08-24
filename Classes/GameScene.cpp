@@ -130,15 +130,12 @@ bool GameScene::onTouchBegan(Touch *touch, Event *unused_event){
     }
 
     
-    if(Config::statusFlag == STATUSFLAG::PLAY){
-        
-        //鼻くそより右か左か判定
-        if(touchPoint.x < Hanakuso::getInstance()->getHanakuso()->getPositionX()){
-            Config::tapPoint = TAPPOINT::LEFT;
-        }else{
-            Config::tapPoint = TAPPOINT::RIGHT;
-        }        
-        
+    
+    //鼻くそより右か左か判定
+    if(touchPoint.x < Hanakuso::getInstance()->getHanakuso()->getPositionX()){
+        Config::tapPoint = TAPPOINT::LEFT;
+    }else{
+        Config::tapPoint = TAPPOINT::RIGHT;
     }
     
     return true;
@@ -151,16 +148,14 @@ void GameScene::onTouchMoved(Touch *touch, Event *unused_event){
     //ポイントの取得
     Point touchPoint = Vec2(touch->getLocation().x,touch->getLocation().y);
     
-    if(Config::statusFlag == STATUSFLAG::PLAY){
-        
-        //鼻くそより右か左か判定
-        if(touchPoint.x < Hanakuso::getInstance()->getHanakuso()->getPositionX()){
-            Config::tapPoint = TAPPOINT::LEFT;
-        }else{
-            Config::tapPoint = TAPPOINT::RIGHT;
-        }
-        
+    
+    //鼻くそより右か左か判定
+    if(touchPoint.x < Hanakuso::getInstance()->getHanakuso()->getPositionX()){
+        Config::tapPoint = TAPPOINT::LEFT;
+    }else{
+        Config::tapPoint = TAPPOINT::RIGHT;
     }
+        
     
     return;
  
@@ -183,10 +178,21 @@ void GameScene::update(float delta){
     
     if(Config::statusFlag != STATUSFLAG::PREPARATION){
         
-    
+        //各ファイルのupdateを記述
         BackGround::getInstance()->update();
         Hanakuso::getInstance()->update();
         
     }
+    
+    //ゲームオーバーを検知
+    if(Config::statusFlag == STATUSFLAG::FAILURE){
+        
+        
+        Config::statusFlag = STATUSFLAG::PREBADEND;
+        
+        //ゲームオーバー演出メソッドを呼ぶこと
+        
+    }
+    
   
 }
