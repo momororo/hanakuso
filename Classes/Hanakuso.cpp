@@ -60,12 +60,14 @@ void Hanakuso::init(){
 void Hanakuso::update(){
     
     
+    //スタート時で不可視状態の場合は可視化
     if(Config::statusFlag == STATUSFLAG::START && (hanakuso->isVisible() == false)){
         //鼻くそ可視化
         hanakuso -> setVisible(true);
     }
     
-    if(Config::statusFlag == STATUSFLAG::PLAY && Config::tapPoint != TAPPOINT::NONE){
+    //プレイ中かゴール中　かつ　タップ中
+    if((Config::statusFlag == STATUSFLAG::PLAY || Config::statusFlag == STATUSFLAG::GOAL) && Config::tapPoint != TAPPOINT::NONE){
         
         //右へ
         if(Config::tapPoint == TAPPOINT::RIGHT){
@@ -82,6 +84,23 @@ void Hanakuso::update(){
         }
         
     }
+    
+    //ゴール中は前方に移動
+    if(Config::statusFlag == STATUSFLAG::GOAL){
+
+            hanakuso -> setPosition(Vec2(hanakuso->getPositionX(), hanakuso->getPositionY() + 25));
+        
+    }
+    
+    
+    //フィールド外に出た場合はゲームオーバー状態に変化させる
+    if(hanakuso->getPositionY() - hanakuso->getContentSize().height/2 > selfFrame.height){
+        
+        //失敗
+        Config::statusFlag = STATUSFLAG::FAILURE;
+        
+    }
+    
  
     
 }
