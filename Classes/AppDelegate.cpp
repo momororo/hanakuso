@@ -57,7 +57,9 @@ bool AppDelegate::applicationDidFinishLaunching() {
     director->setContentScaleFactor(1.0f);
 
     // create a scene. it's an autorelease object
-    auto scene = GameScene::createScene();
+    //auto scene = GameScene::createScene();
+    auto scene = TitleScene::createScene();
+
 
     // run
     director->runWithScene(scene);
