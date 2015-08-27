@@ -24,6 +24,9 @@ public:
     //twitter
     static void openTweetDialog(const char* $tweet,const char *filePath);
     
+    static void openFacebookDialog(const char* $text,const char *filePath);
+
+    
     //appbank ssp
     //static void setAppbankSSP();
     

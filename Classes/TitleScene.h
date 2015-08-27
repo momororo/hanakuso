@@ -43,5 +43,5 @@ public:
     void setRankingBt();
     void setTutorialBt();
     void setTwitterBt();
-    
+    void setFacebookBt();
 };

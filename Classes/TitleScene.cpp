@@ -19,6 +19,7 @@ Scene *TitleScene::createScene(){
     
     auto scene = Scene::create();//WithPhysics();   ←物理設定の場合
     auto layer = TitleScene::create();
+    layer -> setName("layer");
     scene -> addChild(layer);
     
     
@@ -74,6 +75,9 @@ bool TitleScene::init(){
     setRankingBt();
     setTutorialBt();
     setTwitterBt();
+    setFacebookBt();
+    
+    CCLOG("横幅:%f\n縦幅:%f",selfFrame.width,selfFrame.height);
 
 
     
@@ -264,7 +268,7 @@ void TitleScene::setRankingBt(){
     auto startMenu = Menu::create(pBtnItem, NULL);
     
     //pMenuを画面中央に配置
-    startMenu->setPosition(Vec2(selfFrame.width/3, selfFrame.height/3));
+    startMenu->setPosition(Vec2(selfFrame.width/4, selfFrame.height/3));
     startMenu->setName("start");
     this->addChild(startMenu);
 
@@ -349,6 +353,8 @@ void TitleScene::setTwitterBt(){
                 
                 std::string text;
                 
+                CCLOG("succeedにはいったー");
+                
                 //日本語の場合は日本語の説明文を、それ以外は英語
                 if(lang == LanguageType::JAPANESE){
                     
@@ -360,10 +366,13 @@ void TitleScene::setTwitterBt(){
                     text = StringUtils::format("ahahaha");
                 }
                 
+                Director::getInstance()->getTextureCache()->removeTextureForKey(fileName);
+                
                 NativeLauncher::openTweetDialog(text.c_str(), fileName.c_str());
 
             } else {
                 // 撮影失敗
+                CCLOG("失敗だすー");
             }
             
         }, "screen_schott.jpg");
@@ -377,6 +386,88 @@ void TitleScene::setTwitterBt(){
     twitterMenu->setPosition(Vec2(selfFrame.width/2, selfFrame.height/3));
     twitterMenu->setName("twitter");
     this->addChild(twitterMenu);
+    
+}
+
+//MARK::フェイスブックボタン
+void TitleScene::setFacebookBt(){
+    
+    /*
+     //フェイスブックボタン作成
+     auto facebookBt = Sprite::create("twitterBt.png");
+     
+     auto facebookBtTaped = Sprite::create("twitterBt.png");
+     facebookBtTaped -> setOpacity(150);
+     */
+    
+    //仮Facebookボタン
+    auto facebookBt = Label::createWithSystemFont("ふぇいすぶっく", "", 15);
+    facebookBt -> setColor(Color3B::BLACK);
+    auto facebookBtTaped = Label::createWithSystemFont("ふぇいすぶっく", "", 15);
+    facebookBtTaped -> setOpacity(150);
+    facebookBtTaped -> setColor(Color3B::BLACK);
+    
+    
+    
+    //メニューアイテムの作成
+    auto pBtnItem = MenuItemSprite::create(facebookBt, facebookBtTaped, [](Ref *ref){
+        
+        //ボタン効果音
+        //SimpleAudioEngine::getInstance()->playEffect("button70.mp3");
+        
+        /*
+         //呟き回数をカウント
+         auto userDef = UserDefault::getInstance();
+         userDef->setIntegerForKey("twitterCount",(userDef->getIntegerForKey("twitterCount") + 1));
+         
+         //ポイントの読込
+         userDef = UserDefault::getInstance();
+         auto totalPoint = userDef -> getIntegerForKey("playPoint");
+         */
+        
+        
+        utils::captureScreen([](bool succeed,const std::string &fileName) {
+            
+            if (succeed) {
+                // 撮影完了したのでここで処理
+                //言語の取得
+                LanguageType lang = Application::getInstance()->getCurrentLanguage();
+                
+                std::string text;
+                
+                CCLOG("succeedにはいったー");
+                
+                //日本語の場合は日本語の説明文を、それ以外は英語
+                if(lang == LanguageType::JAPANESE){
+                    
+                    text = StringUtils::format("facebook:あははは");
+                    //テキスト作成
+                    //text = StringUtils::format("現在のポイント：%d点\n【iPhoneアプリ】魔女ムズ\n#魔女ムズ",totalPoint);
+                }else{
+                    // text = StringUtils::format("TotalPoints：%dpt\n【iPhone apps】Witch's delivery\n#Witch's delivery",totalPoint);
+                    text = StringUtils::format("facebook:ahahaha");
+                }
+                
+                Director::getInstance()->getTextureCache()->removeTextureForKey(fileName);
+                
+                NativeLauncher::openFacebookDialog(text.c_str(), fileName.c_str());
+                
+            } else {
+                // 撮影失敗
+                CCLOG("失敗だすー");
+            }
+            
+        }, "screen_schott.jpg");
+        
+    });
+    
+    //メニューの作成
+    auto facebookMenu = Menu::create(pBtnItem, NULL);
+    
+    //Menuを画面中央に配置
+    facebookMenu->setPosition(Vec2(selfFrame.width*2/3, selfFrame.height/3));
+    facebookMenu->setName("twitter");
+    this->addChild(facebookMenu);
     
 }
 
