@@ -184,13 +184,46 @@ void GameScene::update(float delta){
         
     }
     
+    //プレイ中各判定
+    if(Config::statusFlag == STATUSFLAG::PLAY){
+        
+        
+    //衝突判定
+        auto backGround = BackGround::getInstance()->getBackGround();
+        auto hanakuso = Hanakuso::getInstance()->getHanakuso();
+        for(int idx = 1 ; backGround->getChildByName(StringUtils::format("enemy_%d",idx)) != nullptr ; idx++){
+            
+            auto enemy = backGround->getChildByName(StringUtils::format("enemy_%d",idx));
+            
+            
+            //ローカル座標 To グローバル座標
+            if(hanakuso->getBoundingBox().containsPoint(backGround->convertToWorldSpace(enemy->getPosition()))){
+                
+                //ステータスをゲームオーバー
+                Config::statusFlag = STATUSFLAG::FAILURE;
+                
+                //インデックスを999にしてループを抜ける
+                idx = 999;
+                
+            };
+            
+            
+        }
+        
+    //ゴール判定
+        
+        
+        
+    }
+    
+    
     //ゲームオーバーを検知
     if(Config::statusFlag == STATUSFLAG::FAILURE){
-        
         
         Config::statusFlag = STATUSFLAG::PREBADEND;
         
         //ゲームオーバー演出メソッドを呼ぶこと
+        
         
     }
     
