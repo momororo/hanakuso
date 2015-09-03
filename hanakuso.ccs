@@ -1,0 +1,15 @@
+<Solution>
+  <PropertyGroup Name="hanakuso" Version="2.3.1.2" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Project Name="MainScene.csd" Type="Scene" />
+        <Image Name="ahuro.png" />
+        <Image Name="gal.png" />
+        <Image Name="galo.png" />
+        <Image Name="ground.png" />
+        <Image Name="okappa.png" />
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>
