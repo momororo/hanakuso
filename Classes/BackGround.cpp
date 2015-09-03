@@ -8,6 +8,12 @@
 
 #include "BackGround.h"
 #include "Config.h"
+
+//ココスタジオ
+#include "cocostudio/CocoStudio.h"
+#include "CocosGUI.h"
+
+
 #define selfFrame Director::getInstance()->getWinSize()
 
 using namespace cocos2d;
@@ -53,7 +59,8 @@ void BackGround::init(){
 }
 
 void BackGround::makeStage1(){
-    
+   
+
     //ステージ長の設定
     int stageLength = 10;
     
@@ -66,12 +73,11 @@ void BackGround::makeStage1(){
     
     //テスト用に色を変更する
     backGround -> setColor(Color3B::RED);
-    
+/*
     //背景画像で埋込
     //テストは適当に埋める
     for(int idx = 0 ; idx < 10 ; idx++){
         
-        //テスト用*後ほど画像に変える*/
         auto floor = Sprite::create();
         floor -> setTextureRect(Rect(0, 0, selfFrame.width, selfFrame.height));
         switch (random(0, 4)) {
@@ -82,20 +88,29 @@ void BackGround::makeStage1(){
             case 4: floor -> setColor(Color3B::WHITE);break;
             default:                break;
         }
-        
-        
+*/
+    
+        auto floor = CSLoader::getInstance()->createNode("MainScene.csb");
+    
+/*
         //アンカーポイントを真下に
         floor -> setAnchorPoint(Vec2(0.5f,0.0f));
         //位置の調整
-        floor -> setPosition(Vec2(backGround->getPositionX(),backGround->getContentSize().height / stageLength * idx));
-        
+        floor -> setPosition(Vec2(backGround->getPositionX(),backGround->getContentSize().height / 0));
+*/
+    
+        //アンカーポイントを真下に
+        floor -> setAnchorPoint(Vec2(0.5f,0.5f));
+        //位置の調整
+        floor -> setPosition(Vec2(selfFrame.width/2,selfFrame.height/2));
+
         log("小背景のxポジは%f",floor->getPositionX());
         
 
         
         backGround->addChild(floor);
         
-    }
+    //}
     
     
 }

@@ -58,7 +58,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     // create a scene. it's an autorelease object
     //auto scene = GameScene::createScene();
-    auto scene = TitleScene::createScene();
+    auto scene = GameScene::createScene();
 
 
     // run
