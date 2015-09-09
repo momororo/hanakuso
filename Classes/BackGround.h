@@ -23,13 +23,13 @@ public:
     void update();
     
     //getter
-    cocos2d::Sprite* getBackGround();
+    cocos2d::Node* getBackGround();
     
     
 private:
     
     
-    cocos2d::Sprite* backGround;
+    cocos2d::Node* backGround;
     
     //シングルトンの場合は変数の宣言が必要
     static BackGround* instance;

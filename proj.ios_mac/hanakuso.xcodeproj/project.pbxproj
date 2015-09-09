@@ -11,7 +11,7 @@
 		044409CA1B981EA200ABC4D5 /* gal.png in Resources */ = {isa = PBXBuildFile; fileRef = 044409C41B981EA200ABC4D5 /* gal.png */; };
 		044409CB1B981EA200ABC4D5 /* galo.png in Resources */ = {isa = PBXBuildFile; fileRef = 044409C51B981EA200ABC4D5 /* galo.png */; };
 		044409CC1B981EA200ABC4D5 /* ground.png in Resources */ = {isa = PBXBuildFile; fileRef = 044409C61B981EA200ABC4D5 /* ground.png */; };
-		044409CD1B981EA200ABC4D5 /* MainScene.csb in Resources */ = {isa = PBXBuildFile; fileRef = 044409C71B981EA200ABC4D5 /* MainScene.csb */; };
+		044409CD1B981EA200ABC4D5 /* StageTest.csb in Resources */ = {isa = PBXBuildFile; fileRef = 044409C71B981EA200ABC4D5 /* StageTest.csb */; };
 		044409CE1B981EA200ABC4D5 /* okappa.png in Resources */ = {isa = PBXBuildFile; fileRef = 044409C81B981EA200ABC4D5 /* okappa.png */; };
 		044409D31B98221600ABC4D5 /* cocosstudio in Resources */ = {isa = PBXBuildFile; fileRef = 044409CF1B98221500ABC4D5 /* cocosstudio */; };
 		044409D41B98221600ABC4D5 /* hanakuso.ccs in Resources */ = {isa = PBXBuildFile; fileRef = 044409D01B98221500ABC4D5 /* hanakuso.ccs */; };
@@ -115,7 +115,7 @@
 		044409C41B981EA200ABC4D5 /* gal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gal.png; sourceTree = "<group>"; };
 		044409C51B981EA200ABC4D5 /* galo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = galo.png; sourceTree = "<group>"; };
 		044409C61B981EA200ABC4D5 /* ground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ground.png; sourceTree = "<group>"; };
-		044409C71B981EA200ABC4D5 /* MainScene.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = MainScene.csb; sourceTree = "<group>"; };
+		044409C71B981EA200ABC4D5 /* StageTest.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = StageTest.csb; sourceTree = "<group>"; };
 		044409C81B981EA200ABC4D5 /* okappa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = okappa.png; sourceTree = "<group>"; };
 		044409CF1B98221500ABC4D5 /* cocosstudio */ = {isa = PBXFileReference; lastKnownFileType = folder; name = cocosstudio; path = ../cocosstudio; sourceTree = "<group>"; };
 		044409D01B98221500ABC4D5 /* hanakuso.ccs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = hanakuso.ccs; path = ../hanakuso.ccs; sourceTree = "<group>"; };
@@ -321,7 +321,7 @@
 				044409C41B981EA200ABC4D5 /* gal.png */,
 				044409C51B981EA200ABC4D5 /* galo.png */,
 				044409C61B981EA200ABC4D5 /* ground.png */,
-				044409C71B981EA200ABC4D5 /* MainScene.csb */,
+				044409C71B981EA200ABC4D5 /* StageTest.csb */,
 				044409C81B981EA200ABC4D5 /* okappa.png */,
 				521A8EA819F11F5000D177D7 /* fonts */,
 			);
@@ -519,7 +519,7 @@
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
 				044409D51B98221600ABC4D5 /* hanakuso.cfg in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
-				044409CD1B981EA200ABC4D5 /* MainScene.csb in Resources */,
+				044409CD1B981EA200ABC4D5 /* StageTest.csb in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
