@@ -17,6 +17,8 @@
 		044409D41B98221600ABC4D5 /* hanakuso.ccs in Resources */ = {isa = PBXBuildFile; fileRef = 044409D01B98221500ABC4D5 /* hanakuso.ccs */; };
 		044409D51B98221600ABC4D5 /* hanakuso.cfg in Resources */ = {isa = PBXBuildFile; fileRef = 044409D11B98221600ABC4D5 /* hanakuso.cfg */; };
 		044409D61B98221600ABC4D5 /* hanakuso.udf in Resources */ = {isa = PBXBuildFile; fileRef = 044409D21B98221600ABC4D5 /* hanakuso.udf */; };
+		044409DA1BA1622500ABC4D5 /* GoodEndScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 044409D81BA1622500ABC4D5 /* GoodEndScene.cpp */; };
+		044409DE1BA1658700ABC4D5 /* BadEndScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 044409DC1BA1658700ABC4D5 /* BadEndScene.cpp */; };
 		04DE9F801B84A0DA00A01287 /* BackGround.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04DE9F791B84A0DA00A01287 /* BackGround.cpp */; };
 		04DE9F811B84A0DA00A01287 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04DE9F7C1B84A0DA00A01287 /* GameScene.cpp */; };
 		04DE9F821B84A0DA00A01287 /* Hanakuso.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04DE9F7E1B84A0DA00A01287 /* Hanakuso.cpp */; };
@@ -121,6 +123,10 @@
 		044409D01B98221500ABC4D5 /* hanakuso.ccs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = hanakuso.ccs; path = ../hanakuso.ccs; sourceTree = "<group>"; };
 		044409D11B98221600ABC4D5 /* hanakuso.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = hanakuso.cfg; path = ../hanakuso.cfg; sourceTree = "<group>"; };
 		044409D21B98221600ABC4D5 /* hanakuso.udf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = hanakuso.udf; path = ../hanakuso.udf; sourceTree = "<group>"; };
+		044409D81BA1622500ABC4D5 /* GoodEndScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GoodEndScene.cpp; sourceTree = "<group>"; };
+		044409D91BA1622500ABC4D5 /* GoodEndScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodEndScene.h; sourceTree = "<group>"; };
+		044409DC1BA1658700ABC4D5 /* BadEndScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BadEndScene.cpp; sourceTree = "<group>"; };
+		044409DD1BA1658700ABC4D5 /* BadEndScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadEndScene.h; sourceTree = "<group>"; };
 		04DE9F791B84A0DA00A01287 /* BackGround.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BackGround.cpp; sourceTree = "<group>"; };
 		04DE9F7A1B84A0DA00A01287 /* BackGround.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackGround.h; sourceTree = "<group>"; };
 		04DE9F7B1B84A0DA00A01287 /* Config.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = Config.h; sourceTree = "<group>"; };
@@ -332,6 +338,8 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				044409DC1BA1658700ABC4D5 /* BadEndScene.cpp */,
+				044409DD1BA1658700ABC4D5 /* BadEndScene.h */,
 				04F58E601B85FAA700A64E96 /* LoadScene.cpp */,
 				04F58E611B85FAA700A64E96 /* LoadScene.h */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
@@ -348,6 +356,8 @@
 				04DE9F7E1B84A0DA00A01287 /* Hanakuso.cpp */,
 				04DE9F7F1B84A0DA00A01287 /* Hanakuso.h */,
 				04DE9F851B84C49E00A01287 /* Config.cpp */,
+				044409D81BA1622500ABC4D5 /* GoodEndScene.cpp */,
+				044409D91BA1622500ABC4D5 /* GoodEndScene.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -551,6 +561,7 @@
 				A474F9B61B85BE3400F1701B /* NativeLauncher.mm in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				04DE9F861B84C49E00A01287 /* Config.cpp in Sources */,
+				044409DA1BA1622500ABC4D5 /* GoodEndScene.cpp in Sources */,
 				A474F9B71B85BE3400F1701B /* TitleScene.cpp in Sources */,
 				04DE9F801B84A0DA00A01287 /* BackGround.cpp in Sources */,
 				04F58E621B85FAA700A64E96 /* LoadScene.cpp in Sources */,
@@ -559,6 +570,7 @@
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				04DE9F821B84A0DA00A01287 /* Hanakuso.cpp in Sources */,
+				044409DE1BA1658700ABC4D5 /* BadEndScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
