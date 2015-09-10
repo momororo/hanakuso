@@ -100,15 +100,6 @@ bool TitleScene::init(){
     
     /*************　　タッチイベント設定  終 ****************/
     
-    /*************　  衝突イベント設定   ****************/
-    /*
-    auto contactListener = EventListenerPhysicsContact::create();
-    contactListener -> onContactBegin = CC_CALLBACK_1(TitleScene::onContactBegin,this);
-    
-    _eventDispatcher -> addEventListenerWithSceneGraphPriority(contactListener,this);
-    */
-    /*************　  衝突イベント設定  終 ****************/
-    
     
     //MARK::nendの設定
     //ネンドの呼び出し(ヘッダー)
@@ -189,24 +180,6 @@ void TitleScene::onTouchEnded(Touch *touch, Event *unused_event){
     Point touchPoint = Vec2(touch->getLocation().x,touch->getLocation().y);
     
 }
-
-
-
-/*
-
-#pragma mark-
-#pragma mark 衝突判定
-bool TitleScene::onContactBegin(cocos2d::PhysicsContact& contact){
-    
-    
-    auto nodeA = contact.getShapeA()->getBody()->getNode();
-    auto nodeB = contact.getShapeB()->getBody()->getNode();
-    
-    CCLOG("衝突判定スタート");
-    
-    return true;
-
-}*/
 
 void TitleScene::setStartBt(){
 

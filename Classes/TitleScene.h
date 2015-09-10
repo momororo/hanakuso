@@ -28,9 +28,6 @@ public:
     bool onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *event);
     void onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *event);
     void onTouchMoved(cocos2d::Touch *touch, cocos2d::Event *event);
-    
-    //衝突イベント
-    //bool onContactBegin(cocos2d::PhysicsContact& contact);
 
     //配列を使う場合
     //cocos2d::Vector<cocos2d::Sprite*>dropVector = cocos2d::Vector<cocos2d::Sprite*>();
