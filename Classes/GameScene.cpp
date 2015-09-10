@@ -9,6 +9,7 @@
 #include "GameScene.h"
 #include "Config.h"
 #include "Hanakuso.h"
+#include "LoadScene.h"
 #define selfFrame Director::getInstance()->getWinSize()
 
 using namespace cocos2d;
@@ -188,44 +189,64 @@ void GameScene::update(float delta){
     if(Config::statusFlag == STATUSFLAG::PLAY){
         
         
-    //衝突判定
+    
+        
         auto backGround = BackGround::getInstance()->getBackGround();
         auto hanakuso = Hanakuso::getInstance()->getHanakuso();
-        for(int idx = 1 ; backGround->getChildByName(StringUtils::format("enemy_%d",idx)) != nullptr ; idx++){
+        
+
+        
+        //ゴール判定
+        auto target = backGround->getChildByName("target");
+
+        //ローカル座標 To グローバル座標
+        if(/*hanakuso->getBoundingBox().containsPoint(backGround->convertToWorldSpace(target->getPosition()))*/ 1 == 2){
             
-            auto enemy = backGround->getChildByName(StringUtils::format("enemy_%d",idx));
             
+            //ステータスをGOODEND
+            Config::statusFlag = STATUSFLAG::GOODEND;
             
-            //ローカル座標 To グローバル座標
-            if(hanakuso->getBoundingBox().containsPoint(backGround->convertToWorldSpace(enemy->getPosition()))){
+            //ゲームクリアの処理を行う
+        
+            Scene* nextScene = CCTransitionFade::create(0.5f, LoadScene::createScene("GoodEndScene"));
+            
+            Director::getInstance()->replaceScene(nextScene);
+
+
+
+        }else{
+            
+
+        
+            //ゲームオーバー判定
+            for(int idx = 1 ; backGround->getChildByName(StringUtils::format("enemy_%d",idx)) != nullptr ; idx++){
                 
-                //ステータスをゲームオーバー
-                Config::statusFlag = STATUSFLAG::FAILURE;
+                auto enemy = backGround->getChildByName(StringUtils::format("enemy_%d",idx));
                 
-                //インデックスを999にしてループを抜ける
-                idx = 999;
                 
-            };
+                //ローカル座標 To グローバル座標
+                if(hanakuso->getBoundingBox().containsPoint(backGround->convertToWorldSpace(enemy->getPosition()))){
+                    
+                    //ステータスをゲームオーバー
+                    Config::statusFlag = STATUSFLAG::BADEND;
+                    
+                    //ゲーム失敗の処理を行う
+                    Scene* nextScene = CCTransitionFade::create(0.5f, LoadScene::createScene("BadEndScene"));
+                    
+                    Director::getInstance()->replaceScene(nextScene);
+                    
+                    
+                  
+                }
+                
+            }
             
             
         }
         
-    //ゴール判定
         
         
         
     }
-    
-    
-    //ゲームオーバーを検知
-    if(Config::statusFlag == STATUSFLAG::FAILURE){
-        
-        Config::statusFlag = STATUSFLAG::PREBADEND;
-        
-        //ゲームオーバー演出メソッドを呼ぶこと
-        
-        
-    }
-    
   
 }

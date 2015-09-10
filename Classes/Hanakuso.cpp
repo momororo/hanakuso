@@ -97,7 +97,7 @@ void Hanakuso::update(){
     if(hanakuso->getPositionY() - hanakuso->getContentSize().height/2 > selfFrame.height){
         
         //失敗
-        Config::statusFlag = STATUSFLAG::FAILURE;
+        Config::statusFlag = STATUSFLAG::BADEND;
         
     }
     

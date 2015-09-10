@@ -25,13 +25,6 @@ enum class  STATUSFLAG {
     PAUSE,
     //ゴール(backGroundが最終地点に到達)
     GOAL,
-    //成功
-    SUCCESS,
-    //失敗
-    FAILURE,
-    //終了前準備
-    PRGOODEND,
-    PREBADEND,
     //終了
     GOODEND,
     BADEND,

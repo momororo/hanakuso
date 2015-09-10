@@ -9,6 +9,9 @@
 #include "LoadScene.h"
 #include "GameScene.h"
 #include "TitleScene.h"
+#include "GoodEndScene.h"
+#include "BadEndScene.h"
+
 
 USING_NS_CC;
 
@@ -80,6 +83,21 @@ void LoadScene::replaceGameScene(float delta){
         Scene* nextScene = CCTransitionPageTurn::create(duration, TitleScene::createScene(),1);
         Director::getInstance()->replaceScene(nextScene);
     }
+    
+    if(this -> getScene() ->getName() == "GoodEndScene"){
+        float duration = 0.5f;  //開始→終了にかける時間
+        Scene* nextScene = CCTransitionPageTurn::create(duration, GoodEndScene::createScene(),1);
+        Director::getInstance()->replaceScene(nextScene);
+    }
+    
+    if(this -> getScene() ->getName() == "BadEndScene"){
+        float duration = 0.5f;  //開始→終了にかける時間
+        Scene* nextScene = CCTransitionPageTurn::create(duration, BadEndScene::createScene(),1);
+        Director::getInstance()->replaceScene(nextScene);
+    }
+
+
+
 
 
     
