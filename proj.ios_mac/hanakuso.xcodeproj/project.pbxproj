@@ -71,8 +71,12 @@
 		A474F9B71B85BE3400F1701B /* TitleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A474F9B41B85BE3400F1701B /* TitleScene.cpp */; };
 		A474F9B91B85C70200F1701B /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A474F9B81B85C70200F1701B /* Social.framework */; };
 		A47E5BAF1BA168B700319F71 /* hanakuso.png in Resources */ = {isa = PBXBuildFile; fileRef = A47E5BAE1BA168B700319F71 /* hanakuso.png */; };
-		A47E5BB31BA1771D00319F71 /* hand.plist in Resources */ = {isa = PBXBuildFile; fileRef = A47E5BB11BA1771D00319F71 /* hand.plist */; };
-		A47E5BB41BA1771D00319F71 /* hand.png in Resources */ = {isa = PBXBuildFile; fileRef = A47E5BB21BA1771D00319F71 /* hand.png */; };
+		A47E5BBB1BA3061800319F71 /* hand.plist in Resources */ = {isa = PBXBuildFile; fileRef = A47E5BB91BA3061800319F71 /* hand.plist */; };
+		A47E5BBC1BA3061800319F71 /* hand.png in Resources */ = {isa = PBXBuildFile; fileRef = A47E5BBA1BA3061800319F71 /* hand.png */; };
+		A47E5BBF1BA8038500319F71 /* exclamation.png in Resources */ = {isa = PBXBuildFile; fileRef = A47E5BBD1BA8038500319F71 /* exclamation.png */; };
+		A47E5BC01BA8038500319F71 /* hit.png in Resources */ = {isa = PBXBuildFile; fileRef = A47E5BBE1BA8038500319F71 /* hit.png */; };
+		A47E5BC31BA803F900319F71 /* failed.png in Resources */ = {isa = PBXBuildFile; fileRef = A47E5BC11BA803F900319F71 /* failed.png */; };
+		A47E5BC41BA803F900319F71 /* success.png in Resources */ = {isa = PBXBuildFile; fileRef = A47E5BC21BA803F900319F71 /* success.png */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -191,8 +195,12 @@
 		A474F9B51B85BE3400F1701B /* TitleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleScene.h; sourceTree = "<group>"; };
 		A474F9B81B85C70200F1701B /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/System/Library/Frameworks/Social.framework; sourceTree = DEVELOPER_DIR; };
 		A47E5BAE1BA168B700319F71 /* hanakuso.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hanakuso.png; sourceTree = "<group>"; };
-		A47E5BB11BA1771D00319F71 /* hand.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hand.plist; sourceTree = "<group>"; };
-		A47E5BB21BA1771D00319F71 /* hand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hand.png; sourceTree = "<group>"; };
+		A47E5BB91BA3061800319F71 /* hand.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hand.plist; sourceTree = "<group>"; };
+		A47E5BBA1BA3061800319F71 /* hand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hand.png; sourceTree = "<group>"; };
+		A47E5BBD1BA8038500319F71 /* exclamation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exclamation.png; sourceTree = "<group>"; };
+		A47E5BBE1BA8038500319F71 /* hit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hit.png; sourceTree = "<group>"; };
+		A47E5BC11BA803F900319F71 /* failed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = failed.png; sourceTree = "<group>"; };
+		A47E5BC21BA803F900319F71 /* success.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = success.png; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -329,8 +337,12 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A47E5BB11BA1771D00319F71 /* hand.plist */,
-				A47E5BB21BA1771D00319F71 /* hand.png */,
+				A47E5BC11BA803F900319F71 /* failed.png */,
+				A47E5BC21BA803F900319F71 /* success.png */,
+				A47E5BBD1BA8038500319F71 /* exclamation.png */,
+				A47E5BBE1BA8038500319F71 /* hit.png */,
+				A47E5BB91BA3061800319F71 /* hand.plist */,
+				A47E5BBA1BA3061800319F71 /* hand.png */,
 				A47E5BAE1BA168B700319F71 /* hanakuso.png */,
 				044409C31B981EA200ABC4D5 /* ahuro.png */,
 				044409C41B981EA200ABC4D5 /* gal.png */,
@@ -527,9 +539,10 @@
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
-				A47E5BB31BA1771D00319F71 /* hand.plist in Resources */,
+				A47E5BBB1BA3061800319F71 /* hand.plist in Resources */,
 				044409CC1B981EA200ABC4D5 /* ground.png in Resources */,
 				044409CE1B981EA200ABC4D5 /* okappa.png in Resources */,
+				A47E5BC01BA8038500319F71 /* hit.png in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
 				521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */,
 				044409CB1B981EA200ABC4D5 /* galo.png in Resources */,
@@ -537,11 +550,14 @@
 				521A8EA919F11F5000D177D7 /* fonts in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
+				A47E5BC41BA803F900319F71 /* success.png in Resources */,
 				044409D51B98221600ABC4D5 /* hanakuso.cfg in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
 				044409CD1B981EA200ABC4D5 /* StageTest.csb in Resources */,
+				A47E5BBF1BA8038500319F71 /* exclamation.png in Resources */,
+				A47E5BC31BA803F900319F71 /* failed.png in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
-				A47E5BB41BA1771D00319F71 /* hand.png in Resources */,
+				A47E5BBC1BA3061800319F71 /* hand.png in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
 				A47E5BAF1BA168B700319F71 /* hanakuso.png in Resources */,
